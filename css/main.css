@@ -1,0 +1,166 @@
+body {
+  background-color: #b2daff;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculator {
+  position: relative;
+  background: linear-gradient(191deg, #17181a -4.95%, #17181a 103.74%);
+  padding: 20px;
+  border-radius: 39px;
+}
+.calculator .display {
+  background-color: transparent;
+  color: #ffffff;
+}
+.calculator form {
+  position: relative;
+}
+.calculator form input {
+  border: 0;
+  outline: 0;
+  width: 62px;
+  height: 62px;
+  border-radius: 16px;
+  background-color: #303136;
+  padding: 6px 4px;
+  font-size: 32px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #29a8ff;
+  margin: 7px 10px;
+}
+.calculator form .display {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 0;
+}
+.calculator form .display input {
+  text-align: right;
+  flex: 1;
+  font-size: 44px;
+}
+.calculator form .zero {
+  width: 145px;
+}
+.calculator form .plus {
+  position: absolute;
+  height: 96px;
+  right: 0;
+}
+.calculator form .equal {
+  position: absolute;
+  height: 96px;
+  bottom: 0;
+  right: 0;
+}
+
+/* Reset and base styles  */
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  /*outline: none;*/
+}
+
+a:focus,
+a:active {
+  /* outline: none;*/
+}
+
+/* Links */
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+  /* display: inline-block; */
+}
+
+a:hover {
+  /* color: inherit; */
+  text-decoration: none;
+}
+
+/* Common */
+aside,
+nav,
+footer,
+header,
+section,
+main {
+  display: block;
+}
+
+ul,
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Form */
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button,
+input[type=submit] {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}/*# sourceMappingURL=main.css.map */
