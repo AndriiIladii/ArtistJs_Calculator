@@ -9,16 +9,11 @@
   <body>
     <div class="container">
       <div class="calc">
-        <form>
-          <div class="calc__screen">
-            <input
-              autocomplete="off"
-              class="display"
-              type="text"
-              name="display"
-            />
-          </div>
-        </form>
+        <div class="calc__screen">
+          <div class="result" id="result"></div>
+          <div class="expression" id="expression">0</div>
+        </div>
+
         <div class="calc__buttons buttons">
           <div class="buttons__left">
             <div class="btn ac" id="clear">Ac</div>

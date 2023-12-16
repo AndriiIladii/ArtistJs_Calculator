@@ -37,18 +37,15 @@ body .calc::before {
   border-radius: 39px;
   z-index: -1;
 }
-body .calc .calc__screen .display {
-  text-align: right;
-  cursor: pointer;
-  margin: 180px 0 134px;
+body .calc .calc__screen {
+  padding: 180px 0 133px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
   font-size: 48px;
   color: #ffffff;
-  background-color: transparent;
-  border: none;
-}
-body .calc .calc__screen .display:focus {
-  outline: none;
+  overflow: hidden;
 }
 body .calc .buttons {
   display: flex;
