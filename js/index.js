@@ -19,8 +19,8 @@ buttons.forEach((button) => {
       display.value = "";
     }
 
-    if (itemText === deleteButton) {
-      display.value = display.value.slice(0, -1);
+    if (button.id === "delete") {
+      display.value = display.value.toString().slice(0, -1);
     }
 
     if (itemText !== deleteButton && itemText !== "Ac" && itemText !== "=") {
