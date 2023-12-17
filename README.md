@@ -5,8 +5,8 @@ Learning project "Advanced Calculator"
 ## Features
 
 - [ ] Basic Calculator
-  - [ ] Enter and delete numbers
-  - [ ] Basic arithmetic operations (+, -, \*, /)
+  - &#9989; Enter and delete numbers
+  - &#9989; Basic arithmetic operations (+, -, \*, /)
   - [ ] Decimal numbers
   - [ ] Negative numbers
   - [ ] Percent button (%)
