@@ -20,7 +20,7 @@ body .calc {
   align-items: flex-start;
   position: relative;
   padding: 40px 33px;
-  width: 375px;
+  width: 450px;
   height: 812px;
   background-color: #17181a;
   border-radius: 39px;
@@ -44,7 +44,6 @@ body .calc .calc__screen {
   text-align: right;
   font-size: 48px;
   color: #ffffff;
-  overflow: hidden;
   background-color: transparent;
   border: none;
   outline: none;
@@ -121,6 +120,11 @@ body .calc .operator:hover {
   color: #303136;
   background-color: #fb5825;
 }
+body .calc .advanced {
+  font-size: 18px;
+  background-color: #ffa98e;
+  color: #303136;
+}
 body .calc .equal {
   border-radius: 12px;
   background-color: #fb5825;
@@ -146,6 +150,11 @@ body .buttons__right .plus {
 }
 body .buttons__right .equal {
   height: 107px;
+}
+body .right__buttons {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
 }
 
 html {

@@ -21,7 +21,7 @@ body {
     align-items: flex-start;
     position: relative;
     padding: 40px 33px;
-    width: 375px;
+    width: 450px;
     height: 812px;
     background-color: $bg-calc;
     border-radius: 39px;
@@ -46,7 +46,6 @@ body {
       text-align: right;
       font-size: 48px;
       color: $color-white;
-      overflow: hidden;
       background-color: transparent;
       border: none;
       outline: none;
@@ -128,6 +127,12 @@ body {
       }
     }
 
+    .advanced {
+      font-size: 18px;
+      background-color: $operator-color;
+      color: $color-dark;
+    }
+
     .equal {
       border-radius: 12px;
       background-color: $equal-bg;
@@ -160,5 +165,11 @@ body {
     .equal {
       height: 107px;
     }
+  }
+
+  .right__buttons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
   }
 }
