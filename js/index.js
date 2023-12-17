@@ -23,7 +23,7 @@ buttons.forEach((button) => {
       display.value = display.value.toString().slice(0, -1);
     }
 
-    if (itemText !== deleteButton && itemText !== "Ac" && itemText !== "=") {
+    if (button.id !== "delete" && itemText !== "Ac" && itemText !== "=") {
       display.value += itemText;
     }
 
