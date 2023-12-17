@@ -40,14 +40,21 @@ body {
     }
 
     .calc__screen {
-      padding: 180px 0 133px;
+      margin: 180px 0 133px;
       width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: end;
+      height: 70px;
+      text-align: right;
       font-size: 48px;
       color: $color-white;
       overflow: hidden;
+      background-color: transparent;
+      border: none;
+      outline: none;
+    }
+
+    .calc__screen::placeholder {
+      color: $color-white;
+      height: 70px;
     }
 
     .buttons {
