@@ -10,7 +10,10 @@ body .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  margin: 0 auto;
+  width: 550px;
+  padding: 0 15px;
+  min-height: 900px;
   height: 100%;
 }
 body .calc {
