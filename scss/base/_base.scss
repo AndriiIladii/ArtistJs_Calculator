@@ -39,21 +39,28 @@ body {
       z-index: -1;
     }
 
-    .calc__screen {
-      margin: 180px 0 133px;
+    .display {
+      color: $color-white;
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      justify-content: space-around;
+      grid-column: 1 / -1;
       width: 100%;
-      height: 70px;
-      text-align: right;
-      font-size: 48px;
-      color: $color-white;
-      background-color: transparent;
-      border: none;
-      outline: none;
-    }
+      padding: 150px 0 70px;
+      word-wrap: break-word;
+      word-break: break-all;
 
-    .calc__screen::placeholder {
-      color: $color-white;
-      height: 70px;
+      .prev {
+        font-size: 32px;
+        font-weight: 400;
+        color: #818181;
+      }
+
+      .current {
+        font-size: 48px;
+        font-weight: 500;
+      }
     }
 
     .buttons {
@@ -96,8 +103,38 @@ body {
       }
     }
 
+    .operator {
+      font-size: 32px;
+      font-weight: 500;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+      background-color: $operator-bg;
+      color: $operator-color;
+
+      &:hover {
+        color: $color-dark;
+        background-color: $equal-bg;
+      }
+    }
+
     .ac,
     .delete {
+      font-weight: 500;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
       font-size: 24px;
       color: $delete-color;
       background-color: $delete-bg;
@@ -114,16 +151,6 @@ body {
       fill: $delete-color;
       &:hover {
         fill: $color-dark;
-      }
-    }
-
-    .operator {
-      background-color: $operator-bg;
-      color: $operator-color;
-
-      &:hover {
-        color: $color-dark;
-        background-color: $equal-bg;
       }
     }
 

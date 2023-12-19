@@ -9,28 +9,31 @@
   <body>
     <div class="container">
       <div class="calc">
-        <input type="text" class="calc__screen" placeholder="0" />
+        <div class="display">
+          <div class="prev"></div>
+          <div class="current"></div>
+        </div>
 
         <div class="calc__buttons buttons">
           <div class="right__buttons">
-            <div class="btn percent advanced" id="substract">%</div>
-            <div class="btn power advanced" id="multiply">x²</div>
+            <div class="btn percent operator advanced" id="substract">%</div>
+            <div class="btn power operator advanced" id="multiply">x²</div>
 
-            <div class="btn cos advanced" id="substract">cos</div>
-            <div class="btn tan advanced" id="multiply">tan</div>
+            <div class="btn cos operator advanced" id="substract">cos</div>
+            <div class="btn tan operator advanced" id="multiply">tan</div>
 
-            <div class="btn sin advanced" id="substract">sin</div>
+            <div class="btn sin operator advanced" id="substract">sin</div>
           </div>
           <div class="buttons__left">
-            <div class="btn ac" id="clear">Ac</div>
-            <div class="btn delete" id="delete">
+            <div class="ac" id="clear">Ac</div>
+            <div class="delete" id="delete">
               <svg class="del" width="24" height="24">
                 <path
                   d="M6.53481 3H20.9998C21.265 3 21.5194 3.10536 21.7069 3.29289C21.8945 3.48043 21.9998 3.73478 21.9998 4V20C21.9998 20.2652 21.8945 20.5196 21.7069 20.7071C21.5194 20.8946 21.265 21 20.9998 21H6.53481C6.37022 21 6.20816 20.9594 6.06303 20.8818C5.91789 20.8042 5.79416 20.6919 5.70281 20.555L0.36981 12.555C0.260171 12.3907 0.20166 12.1975 0.20166 12C0.20166 11.8025 0.260171 11.6093 0.36981 11.445L5.70281 3.445C5.79416 3.30808 5.91789 3.19583 6.06303 3.11821C6.20816 3.04058 6.37022 2.99998 6.53481 3ZM7.06981 5L2.40381 12L7.06981 19H19.9998V5H7.06981ZM12.9998 10.586L15.8278 7.757L17.2428 9.172L14.4138 12L17.2428 14.828L15.8278 16.243L12.9998 13.414L10.1718 16.243L8.75681 14.828L11.5858 12L8.75681 9.172L10.1718 7.757L12.9998 10.586Z"
                 />
               </svg>
             </div>
-            <div class="btn division operator" id="division">/</div>
+            <div class="division operator" id="division">÷</div>
             <div class="btn seven" id="7">7</div>
             <div class="btn eight" id="8">8</div>
             <div class="btn nine" id="9">9</div>
@@ -49,11 +52,11 @@
             </div>
           </div>
           <div class="buttons__right">
-            <div class="btn multiply operator" id="multiply">*</div>
+            <div class="multiply operator" id="multiply">x</div>
 
-            <div class="btn substract operator" id="substract">-</div>
-            <div class="btn plus operator" id="plus">+</div>
-            <div class="btn equal operator" id="equal">=</div>
+            <div class="substract operator" id="substract">-</div>
+            <div class="plus operator" id="plus">+</div>
+            <div class="equal operator" id="equal">=</div>
           </div>
         </div>
       </div>
