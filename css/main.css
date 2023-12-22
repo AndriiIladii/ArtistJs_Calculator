@@ -52,15 +52,6 @@ body .calc .display {
   word-wrap: break-word;
   word-break: break-all;
 }
-body .calc .display .prev {
-  font-size: 32px;
-  font-weight: 400;
-  color: #818181;
-}
-body .calc .display .current {
-  font-size: 48px;
-  font-weight: 500;
-}
 body .calc .buttons {
   display: flex;
   -moz-column-gap: 20px;
