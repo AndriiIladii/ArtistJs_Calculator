@@ -90,7 +90,8 @@ body .calc .btn:hover {
   color: #303136;
   background-color: #f1754e;
 }
-body .calc .operator {
+body .calc .operator,
+body .calc .equal {
   font-size: 32px;
   font-weight: 500;
   display: flex;
@@ -105,7 +106,8 @@ body .calc .operator {
   background-color: #f1754e;
   color: #ffa98e;
 }
-body .calc .operator:hover {
+body .calc .operator:hover,
+body .calc .equal:hover {
   color: #303136;
   background-color: #fb5825;
 }
