@@ -9,7 +9,10 @@
   <body>
     <div class="container">
       <div class="calc">
-        <div class="display" id="display"></div>
+        <div class="display" id="display">
+          <div class="values">0</div>
+          <div class="result">0</div>
+        </div>
 
         <div class="calc__buttons buttons">
           <div class="right__buttons">
@@ -30,7 +33,7 @@
                 />
               </svg>
             </div>
-            <div class="division operator" id="division">÷</div>
+            <div class="division operator" id="division" data-value="÷">÷</div>
             <div class="btn seven" id="7">7</div>
             <div class="btn eight" id="8">8</div>
             <div class="btn nine" id="9">9</div>
@@ -45,15 +48,17 @@
 
             <div class="buttons__inner">
               <div class="btn zero" id="0">0</div>
-              <div class="btn dot" id="dot">.</div>
+              <div class="btn dot" id="dot" data-value=".">.</div>
             </div>
           </div>
           <div class="buttons__right">
-            <div class="multiply operator" id="multiply">x</div>
+            <div class="multiply operator" id="multiply" data-value="x">x</div>
 
-            <div class="substract operator" id="substract">-</div>
-            <div class="plus operator" id="plus">+</div>
-            <div class="equal" id="equal">=</div>
+            <div class="substract operator" id="substract" data-value="-">
+              -
+            </div>
+            <div class="plus operator" id="plus" data-value="+">+</div>
+            <div class="equal" id="equal" data-value="=">=</div>
           </div>
         </div>
       </div>
