@@ -53,8 +53,12 @@ function calculation() {
       default:
         break;
     }
-    resultDisplay.textContent =
-      result % 1 === 0 ? result.toFixed(0) : result.toFixed(2);
+
+    if (result % 1 === 0) {
+      resultDisplay.textContent = result.toFixed(0);
+    } else {
+      resultDisplay.textContent = result.toFixed(2);
+    }
 
     values.textContent = operand1 + " " + operator + " " + inputValue + " = ";
 
@@ -77,7 +81,7 @@ operatorBtns.forEach((operatorButton) => {
   operatorButton.addEventListener("click", () => {
     values.style.visibility = "visible";
     operand1 = Number(resultDisplay.textContent);
-    operator = operatorButton.textContent;
+    operator = operatorButton.getAttribute("data-value");
     values.textContent = operand1 + " " + operator;
     resultDisplay.textContent = "0";
   });
