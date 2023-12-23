@@ -52,15 +52,6 @@ body .calc .display {
   word-wrap: break-word;
   word-break: break-all;
 }
-body .calc .display .prev {
-  font-size: 32px;
-  font-weight: 400;
-  color: #818181;
-}
-body .calc .display .current {
-  font-size: 48px;
-  font-weight: 500;
-}
 body .calc .buttons {
   display: flex;
   -moz-column-gap: 20px;
@@ -99,7 +90,8 @@ body .calc .btn:hover {
   color: #303136;
   background-color: #f1754e;
 }
-body .calc .operator {
+body .calc .operator,
+body .calc .equal {
   font-size: 32px;
   font-weight: 500;
   display: flex;
@@ -114,7 +106,8 @@ body .calc .operator {
   background-color: #f1754e;
   color: #ffa98e;
 }
-body .calc .operator:hover {
+body .calc .operator:hover,
+body .calc .equal:hover {
   color: #303136;
   background-color: #fb5825;
 }

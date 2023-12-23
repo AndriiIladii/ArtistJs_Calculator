@@ -9,20 +9,20 @@
   <body>
     <div class="container">
       <div class="calc">
-        <div class="display">
-          <div class="prev"></div>
-          <div class="current"></div>
+        <div class="display" id="display">
+          <div class="values">0</div>
+          <div class="result">0</div>
         </div>
 
         <div class="calc__buttons buttons">
           <div class="right__buttons">
-            <div class="btn percent operator advanced" id="substract">%</div>
-            <div class="btn power operator advanced" id="multiply">x²</div>
+            <div class="percent operator advanced" id="percent">%</div>
+            <div class="power operator advanced" id="power">x²</div>
 
-            <div class="btn cos operator advanced" id="substract">cos</div>
-            <div class="btn tan operator advanced" id="multiply">tan</div>
+            <div class="cos operator advanced" id="cos">cos</div>
+            <div class="tan operator advanced" id="tan">tan</div>
 
-            <div class="btn sin operator advanced" id="substract">sin</div>
+            <div class="sin operator advanced" id="sin">sin</div>
           </div>
           <div class="buttons__left">
             <div class="ac" id="clear">Ac</div>
@@ -33,7 +33,7 @@
                 />
               </svg>
             </div>
-            <div class="division operator" id="division">÷</div>
+            <div class="division operator" id="division" data-value="÷">÷</div>
             <div class="btn seven" id="7">7</div>
             <div class="btn eight" id="8">8</div>
             <div class="btn nine" id="9">9</div>
@@ -48,15 +48,17 @@
 
             <div class="buttons__inner">
               <div class="btn zero" id="0">0</div>
-              <div class="btn dot" id="dot">.</div>
+              <div class="btn dot" id="dot" data-value=".">.</div>
             </div>
           </div>
           <div class="buttons__right">
-            <div class="multiply operator" id="multiply">x</div>
+            <div class="multiply operator" id="multiply" data-value="x">x</div>
 
-            <div class="substract operator" id="substract">-</div>
-            <div class="plus operator" id="plus">+</div>
-            <div class="equal operator" id="equal">=</div>
+            <div class="substract operator" id="substract" data-value="-">
+              -
+            </div>
+            <div class="plus operator" id="plus" data-value="+">+</div>
+            <div class="equal" id="equal" data-value="=">=</div>
           </div>
         </div>
       </div>
