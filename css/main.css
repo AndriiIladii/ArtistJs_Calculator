@@ -51,6 +51,12 @@ body .calc .display {
   padding: 150px 0 70px;
   word-wrap: break-word;
   word-break: break-all;
+  font-size: 48px;
+}
+body .calc .display .values {
+  color: #818181;
+  font-weight: 400;
+  font-size: 24px;
 }
 body .calc .buttons {
   display: flex;

@@ -1,6 +1,6 @@
 const numberBtns = document.querySelectorAll(".btn");
 const operatorBtns = document.querySelectorAll(".operator");
-const inputAnswer = document.querySelector(".result");
+const resultDisplay = document.querySelector(".result");
 const values = document.querySelector(".values");
 const clearAll = document.querySelector("#clear");
 const deleteBtn = document.querySelector("#delete");
@@ -11,7 +11,7 @@ let operator = null;
 
 function clearDisplay() {
   values.style.visibility = "hidden";
-  inputAnswer.textContent = "0";
+  resultDisplay.textContent = "0";
   operand1 = null;
   operator = null;
   values.textContent = "0";
@@ -19,46 +19,42 @@ function clearDisplay() {
 
 function appendNumber(value) {
   const clickedNumber = value.target;
-  const inputValue = inputAnswer.textContent;
+  const inputValue = resultDisplay.textContent;
 
   if (inputValue === "0") {
-    inputAnswer.textContent = clickedNumber.textContent;
+    resultDisplay.textContent = clickedNumber.textContent;
   } else {
-    inputAnswer.textContent += clickedNumber.textContent;
+    resultDisplay.textContent += clickedNumber.textContent;
   }
 }
 
 function calculation() {
-  const inputValue = inputAnswer.textContent;
+  const inputValue = resultDisplay.textContent;
 
   if (operand1 !== null && operator !== null) {
     let result;
 
     switch (operator) {
       case "+":
-        result = operand1 + parseFloat(inputValue);
+        result = operand1 + Number(inputValue);
         break;
       case "-":
-        result = operand1 - parseFloat(inputValue);
+        result = operand1 - Number(inputValue);
         break;
       case "x":
-        result = operand1 * parseFloat(inputValue);
+        result = operand1 * Number(inputValue);
         break;
       case "÷":
-        result = operand1 / parseFloat(inputValue);
+        result = operand1 / Number(inputValue);
         break;
       case "%":
-        result = (operand1 / 100) * parseFloat(inputValue);
+        result = (operand1 / 100) * Number(inputValue);
         break;
       default:
         break;
     }
-
-    if (result % 1 === 0) {
-      inputAnswer.textContent = result.toFixed(0);
-    } else {
-      inputAnswer.textContent = result.toFixed(2);
-    }
+    resultDisplay.textContent =
+      result % 1 === 0 ? result.toFixed(0) : result.toFixed(2);
 
     values.textContent = operand1 + " " + operator + " " + inputValue + " = ";
 
@@ -68,22 +64,22 @@ function calculation() {
 }
 
 function clearLast() {
-  let inputValue = inputAnswer.textContent;
+  let inputValue = resultDisplay.textContent;
   if (inputValue.length > 1) {
     inputValue = inputValue.slice(0, -1);
-    inputAnswer.textContent = inputValue;
+    resultDisplay.textContent = inputValue;
   } else {
-    inputAnswer.textContent = "0";
+    resultDisplay.textContent = "0";
   }
 }
 
-operatorBtns.forEach((operator) => {
-  operator.addEventListener("click", () => {
+operatorBtns.forEach((operatorButton) => {
+  operatorButton.addEventListener("click", () => {
     values.style.visibility = "visible";
-    operand1 = parseFloat(inputAnswer.textContent);
-    operatorBtn = operator.textContent;
-    values.textContent = operand1 + " " + operatorBtn;
-    inputAnswer.textContent = "0";
+    operand1 = Number(resultDisplay.textContent);
+    operator = operatorButton.textContent;
+    values.textContent = operand1 + " " + operator;
+    resultDisplay.textContent = "0";
   });
 });
 
