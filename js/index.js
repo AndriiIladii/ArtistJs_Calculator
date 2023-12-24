@@ -9,12 +9,14 @@ const decimalBtn = document.querySelector("#dot");
 
 let operand1 = null;
 let operator = null;
+let dotPressed = false;
 
 function clearDisplay() {
   values.style.visibility = "hidden";
   resultDisplay.textContent = "0";
   operand1 = null;
   operator = null;
+  dotPressed = false;
   values.textContent = "0";
 }
 
@@ -66,6 +68,8 @@ function calculation() {
     operand1 = null;
     operator = null;
   }
+
+  dotPressed = false;
 }
 
 function clearLast() {
@@ -101,7 +105,8 @@ deleteBtn.addEventListener("click", clearLast);
 decimalBtn.addEventListener("click", () => {
   const inputValue = resultDisplay.textContent;
 
-  if (!inputValue.includes(".")) {
+  if (!dotPressed && !inputValue.includes(".")) {
     resultDisplay.textContent += ".";
+    dotPressed = true;
   }
 });
