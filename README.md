@@ -7,7 +7,7 @@ Learning project "Advanced Calculator"
 - [ ] Basic Calculator
   - &#9989; Enter and delete numbers
   - &#9989; Basic arithmetic operations (+, -, \*, /)
-  - &#9989; Decimal numbers
+  - [ ] Decimal numbers
   - [ ] Negative numbers
   - &#9989; Percent button (%)
   - [ ] Square root

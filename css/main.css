@@ -78,7 +78,8 @@ body .calc .buttons__inner {
   -moz-column-gap: 20px;
        column-gap: 20px;
 }
-body .calc .btn {
+body .calc .btn,
+body .calc .dot {
   font-size: 32px;
   font-weight: 500;
   display: flex;
@@ -92,7 +93,8 @@ body .calc .btn {
   background-color: #303136;
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
-body .calc .btn:hover {
+body .calc .btn:hover,
+body .calc .dot:hover {
   color: #303136;
   background-color: #f1754e;
 }
