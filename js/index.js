@@ -5,6 +5,7 @@ const values = document.querySelector(".values");
 const clearAll = document.querySelector("#clear");
 const deleteBtn = document.querySelector("#delete");
 const equal = document.querySelector("#equal");
+const decimalBtn = document.querySelector("#dot");
 
 let operand1 = null;
 let operator = null;
@@ -96,3 +97,11 @@ equal.addEventListener("click", calculation);
 clearAll.addEventListener("click", clearDisplay);
 
 deleteBtn.addEventListener("click", clearLast);
+
+decimalBtn.addEventListener("click", () => {
+  const inputValue = resultDisplay.textContent;
+
+  if (!inputValue.includes(".")) {
+    resultDisplay.textContent += ".";
+  }
+});
