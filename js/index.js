@@ -105,8 +105,7 @@ deleteBtn.addEventListener("click", clearLast);
 decimalBtn.addEventListener("click", () => {
   const inputValue = resultDisplay.textContent;
 
-  if (!dotPressed && !inputValue.includes(".")) {
+  if (dotPressed && !inputValue.includes(".")) {
     resultDisplay.textContent += ".";
-    dotPressed = true;
   }
 });
