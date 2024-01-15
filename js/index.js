@@ -39,28 +39,28 @@ function calculation() {
 
     switch (operator) {
       case "+":
-        result = operand1 + Number(inputValue);
+        result = operand1 + parseFloat(inputValue);
         break;
       case "-":
-        result = operand1 - Number(inputValue);
+        result = operand1 - parseFloat(inputValue);
         break;
       case "x":
-        result = operand1 * Number(inputValue);
+        result = operand1 * parseFloat(inputValue);
         break;
       case "÷":
-        result = operand1 / Number(inputValue);
+        result = operand1 / parseFloat(inputValue);
         break;
       case "%":
-        result = (operand1 / 100) * Number(inputValue);
+        result = (operand1 / 100) * parseFloat(inputValue);
         break;
       default:
         break;
     }
 
-    if (result % 1 === 0) {
+    if (Number.isInteger(result)) {
       resultDisplay.textContent = result.toFixed(0);
     } else {
-      resultDisplay.textContent = result.toFixed(2);
+      resultDisplay.textContent = result.toFixed(1);
     }
 
     values.textContent = operand1 + " " + operator + " " + inputValue + " = ";
