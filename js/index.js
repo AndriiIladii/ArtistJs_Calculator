@@ -107,6 +107,5 @@ decimalBtn.addEventListener("click", () => {
 
   if (!dotPressed && !inputValue.includes(".")) {
     resultDisplay.textContent += ".";
-    dotPressed = true;
   }
 });
