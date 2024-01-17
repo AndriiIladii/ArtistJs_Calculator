@@ -10,7 +10,7 @@ Learning project "Advanced Calculator"
   - &#9989; Decimal numbers
   - [ ] Negative numbers
   - &#9989; Percent button (%)
-  - [ ] Square root
+  - &#9989; Square root
 - [ ] Advanced features
   - [ ] Power ($x^{2}$ and $x^{n}$)
   - [ ] Trigonometry (sin, cos, tan)
