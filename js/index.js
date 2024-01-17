@@ -6,6 +6,7 @@ const clearAll = document.querySelector("#clear");
 const deleteBtn = document.querySelector("#delete");
 const equal = document.querySelector("#equal");
 const decimalBtn = document.querySelector("#dot");
+const sqrtBtn = document.querySelector("#sqrt");
 
 let operand1 = null;
 let operator = null;
@@ -20,6 +21,27 @@ function clearDisplay() {
   values.textContent = "0";
 }
 
+sqrtBtn.addEventListener("click", () => {
+  const inputValue = parseFloat(resultDisplay.textContent);
+
+  if (inputValue >= 0) {
+    const sqrtResult = Math.sqrt(inputValue);
+
+    if (Number.isInteger(sqrtResult)) {
+      resultDisplay.textContent = sqrtResult.toFixed(0);
+    } else {
+      resultDisplay.textContent = sqrtResult.toFixed(3);
+    }
+
+    values.textContent = "√" + inputValue + " = ";
+    operand1 = null;
+    operator = null;
+    dotPressed = false;
+  } else {
+    resultDisplay.textContent = "Error";
+  }
+});
+
 function appendNumber(value) {
   const clickedNumber = value.target;
   const inputValue = resultDisplay.textContent;
@@ -32,26 +54,26 @@ function appendNumber(value) {
 }
 
 function calculation() {
-  const inputValue = resultDisplay.textContent;
+  const inputValue = parseFloat(resultDisplay.textContent);
 
   if (operand1 !== null && operator !== null) {
     let result;
 
     switch (operator) {
       case "+":
-        result = operand1 + parseFloat(inputValue);
+        result = operand1 + inputValue;
         break;
       case "-":
-        result = operand1 - parseFloat(inputValue);
+        result = operand1 - inputValue;
         break;
       case "x":
-        result = operand1 * parseFloat(inputValue);
+        result = operand1 * inputValue;
         break;
       case "÷":
-        result = operand1 / parseFloat(inputValue);
+        result = operand1 / inputValue;
         break;
       case "%":
-        result = (operand1 / 100) * parseFloat(inputValue);
+        result = (operand1 / 100) * inputValue;
         break;
       default:
         break;
