@@ -7,6 +7,7 @@ const deleteBtn = document.querySelector("#delete");
 const equal = document.querySelector("#equal");
 const decimalBtn = document.querySelector("#dot");
 const sqrtBtn = document.querySelector("#sqrt");
+const plusMinusBtn = document.querySelector("#plus-minus");
 
 let operand1 = null;
 let operator = null;
@@ -129,5 +130,14 @@ decimalBtn.addEventListener("click", () => {
 
   if (!inputValue.includes(".")) {
     resultDisplay.textContent += ".";
+  }
+});
+
+plusMinusBtn.addEventListener("click", () => {
+  const currentValue = parseFloat(resultDisplay.textContent);
+
+  if (!isNaN(currentValue)) {
+    const newValue = -currentValue;
+    resultDisplay.textContent = newValue;
   }
 });
