@@ -4,7 +4,7 @@ Learning project "Advanced Calculator"
 
 ## Features
 
-- [ ] Basic Calculator
+- &#9989;Basic Calculator
   - &#9989; Enter and delete numbers
   - &#9989; Basic arithmetic operations (+, -, \*, /)
   - &#9989; Decimal numbers
