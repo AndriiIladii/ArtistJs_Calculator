@@ -99,7 +99,8 @@ body .calc .dot:hover {
   background-color: #f1754e;
 }
 body .calc .operator,
-body .calc .equal {
+body .calc .equal,
+body .calc .plus-minus {
   font-size: 32px;
   font-weight: 500;
   display: flex;
@@ -115,7 +116,8 @@ body .calc .equal {
   color: #ffa98e;
 }
 body .calc .operator:hover,
-body .calc .equal:hover {
+body .calc .equal:hover,
+body .calc .plus-minus:hover {
   color: #303136;
   background-color: #fb5825;
 }

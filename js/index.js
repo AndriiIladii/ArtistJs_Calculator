@@ -13,35 +13,7 @@ let operand1 = null;
 let operator = null;
 let dotPressed = false;
 
-function clearDisplay() {
-  values.style.visibility = "hidden";
-  resultDisplay.textContent = "0";
-  operand1 = null;
-  operator = null;
-  dotPressed = false;
-  values.textContent = "0";
-}
-
-sqrtBtn.addEventListener("click", () => {
-  const inputValue = parseFloat(resultDisplay.textContent);
-
-  if (inputValue >= 0) {
-    const sqrtResult = Math.sqrt(inputValue);
-
-    if (Number.isInteger(sqrtResult)) {
-      resultDisplay.textContent = sqrtResult.toFixed(0);
-    } else {
-      resultDisplay.textContent = sqrtResult.toFixed(3);
-    }
-
-    values.textContent = "√" + inputValue + " = ";
-    operand1 = null;
-    operator = null;
-    dotPressed = false;
-  } else {
-    resultDisplay.textContent = "Error";
-  }
-});
+// Displaying numbers //
 
 function appendNumber(value) {
   const clickedNumber = value.target;
@@ -53,6 +25,10 @@ function appendNumber(value) {
     resultDisplay.textContent += clickedNumber.textContent;
   }
 }
+
+// Displaying numbers //
+
+// Calculation function //
 
 function calculation() {
   const inputValue = parseFloat(resultDisplay.textContent);
@@ -72,6 +48,12 @@ function calculation() {
         break;
       case "÷":
         result = operand1 / inputValue;
+        if (inputValue !== 0) {
+          result = operand1 / inputValue;
+        } else {
+          resultDisplay.textContent = "Error";
+          return;
+        }
         break;
       case "%":
         result = (operand1 / 100) * inputValue;
@@ -95,6 +77,35 @@ function calculation() {
   dotPressed = false;
 }
 
+// Calculation function //
+
+// Calculation of square root //
+
+sqrtBtn.addEventListener("click", () => {
+  const inputValue = parseFloat(resultDisplay.textContent);
+
+  if (!isNaN(inputValue) && inputValue >= 0) {
+    const sqrtResult = Math.sqrt(inputValue);
+
+    if (Number.isInteger(sqrtResult)) {
+      resultDisplay.textContent = sqrtResult.toFixed(0);
+    } else {
+      resultDisplay.textContent = sqrtResult.toFixed(3);
+    }
+
+    values.textContent = "√" + inputValue + " = ";
+    operand1 = null;
+    operator = null;
+    dotPressed = false;
+  } else {
+    resultDisplay.textContent = "Error";
+  }
+});
+
+// Calculation of square root //
+
+// Clear last integer or operator on display //
+
 function clearLast() {
   let inputValue = resultDisplay.textContent;
   if (inputValue.length > 1) {
@@ -104,6 +115,50 @@ function clearLast() {
     resultDisplay.textContent = "0";
   }
 }
+
+// Clear last integer or operator on display //
+
+// Clear all elements on display //
+
+function clearDisplay() {
+  values.style.visibility = "hidden";
+  resultDisplay.textContent = "0";
+  operand1 = null;
+  operator = null;
+  dotPressed = false;
+  values.textContent = "0";
+}
+
+// Clear all elements on display //
+
+// Keyboard support //
+
+document.addEventListener("keydown", (e) => {
+  const key = e.key;
+
+  if (key === "Enter" || key === "=") {
+    calculation();
+  }
+  if (key === "Backspace") {
+    clearLast();
+  }
+
+  if (key === "Escape" || key === "c" || key === "C") {
+    clearDisplay();
+  }
+
+  if (!isNaN(key) || key === ".") {
+    appendNumber({ target: { textContent: key } });
+  }
+
+  if (key === "+" || key === "-" || key === "*" || key === "/" || key === "%") {
+    const operatorButton = document.querySelector(`[data-value="${key}"]`);
+    if (operatorButton) {
+      operatorButton.click();
+    }
+  }
+});
+// Keyboard support //
 
 operatorBtns.forEach((operatorButton) => {
   operatorButton.addEventListener("click", () => {

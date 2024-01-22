@@ -8,11 +8,11 @@ Learning project "Advanced Calculator"
   - &#9989; Enter and delete numbers
   - &#9989; Basic arithmetic operations (+, -, \*, /)
   - &#9989; Decimal numbers
-  - [ ] Negative numbers
+  - &#9989; Negative numbers
   - &#9989; Percent button (%)
   - &#9989; Square root
 - [ ] Advanced features
   - [ ] Power ($x^{2}$ and $x^{n}$)
   - [ ] Trigonometry (sin, cos, tan)
-  - [ ] Keyboard support
+  - &#9989;Keyboard support
   - [ ] History
