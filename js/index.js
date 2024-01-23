@@ -70,7 +70,7 @@ function calculation() {
 
     values.textContent = operand1 + " " + operator + " " + inputValue + " = ";
 
-    operand1 = null;
+    operand1 = result;
     operator = null;
   }
 
@@ -88,14 +88,13 @@ sqrtBtn.addEventListener("click", () => {
     const sqrtResult = Math.sqrt(inputValue);
 
     if (Number.isInteger(sqrtResult)) {
-      resultDisplay.textContent = sqrtResult.toFixed(0);
+      values.textContent = "√" + inputValue + " = " + sqrtResult.toFixed(0);
     } else {
-      resultDisplay.textContent = sqrtResult.toFixed(3);
+      values.textContent = "√" + inputValue + " = " + sqrtResult.toFixed(3);
     }
 
-    values.textContent = "√" + inputValue + " = ";
-    operand1 = null;
-    operator = null;
+    resultDisplay.textContent = "√" + inputValue + " = ";
+    operand1 = sqrtResult;
     dotPressed = false;
   } else {
     resultDisplay.textContent = "Error";
