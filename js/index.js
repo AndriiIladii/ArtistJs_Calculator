@@ -88,12 +88,12 @@ sqrtBtn.addEventListener("click", () => {
     const sqrtResult = Math.sqrt(inputValue);
 
     if (Number.isInteger(sqrtResult)) {
-      values.textContent = "√" + inputValue + " = " + sqrtResult.toFixed(0);
+      resultDisplay.textContent = sqrtResult.toFixed(0);
     } else {
-      values.textContent = "√" + inputValue + " = " + sqrtResult.toFixed(3);
+      resultDisplay.textContent = sqrtResult.toFixed(3);
     }
 
-    resultDisplay.textContent = "√" + inputValue + " = ";
+    values.textContent = "√" + inputValue + " = ";
     operand1 = sqrtResult;
     dotPressed = false;
   } else {

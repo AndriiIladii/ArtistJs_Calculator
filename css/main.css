@@ -100,7 +100,8 @@ body .calc .dot:hover {
 }
 body .calc .operator,
 body .calc .equal,
-body .calc .plus-minus {
+body .calc .plus-minus,
+body .calc .sqrt {
   font-size: 32px;
   font-weight: 500;
   display: flex;
@@ -117,7 +118,8 @@ body .calc .plus-minus {
 }
 body .calc .operator:hover,
 body .calc .equal:hover,
-body .calc .plus-minus:hover {
+body .calc .plus-minus:hover,
+body .calc .sqrt:hover {
   color: #303136;
   background-color: #fb5825;
 }
