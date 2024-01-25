@@ -31,7 +31,7 @@ function appendNumber(value) {
 // Calculation function //
 
 function calculation() {
-  const inputValue = parseFloat(resultDisplay.textContent);
+  let inputValue = parseFloat(resultDisplay.textContent);
 
   if (operand1 !== null && operator !== null) {
     let result;
@@ -57,6 +57,13 @@ function calculation() {
         break;
       case "%":
         result = (operand1 / 100) * inputValue;
+        break;
+      case "^":
+        result = Math.pow(operand1, inputValue);
+        break;
+      case "²":
+        result = Math.pow(operand1, 2);
+        inputValue = "";
         break;
       default:
         break;
