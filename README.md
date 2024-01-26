@@ -12,7 +12,7 @@ Learning project "Advanced Calculator"
   - &#9989; Percent button (%)
   - &#9989; Square root
 - [ ] Advanced features
-  - [ ] Power ($x^{2}$ and $x^{n}$)
+  - &#9989; Power ($x^{2}$ and $x^{n}$)
   - [ ] Trigonometry (sin, cos, tan)
   - &#9989;Keyboard support
   - [ ] History
