@@ -77,7 +77,7 @@ function calculation() {
 
     values.textContent = operand1 + " " + operator + " " + inputValue + " = ";
 
-    operand1 = null;
+    operand1 = result;
     operator = null;
   }
 
@@ -127,7 +127,6 @@ function clearLast() {
 // Clear all elements on display //
 
 function clearDisplay() {
-  values.style.visibility = "hidden";
   resultDisplay.textContent = "0";
   operand1 = null;
   operator = null;
