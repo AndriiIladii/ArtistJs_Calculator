@@ -127,7 +127,6 @@ function clearLast() {
 // Clear all elements on display //
 
 function clearDisplay() {
-  values.style.visibility = "hidden";
   resultDisplay.textContent = "0";
   operand1 = null;
   operator = null;
