@@ -7,6 +7,7 @@ const deleteBtn = document.querySelector("#delete");
 const equal = document.querySelector("#equal");
 const decimalBtn = document.querySelector("#dot");
 const sqrtBtn = document.querySelector("#sqrt");
+const squareBtn = document.querySelector("#square");
 const plusMinusBtn = document.querySelector("#plus-minus");
 
 let operand1 = null;
@@ -61,10 +62,6 @@ function calculation() {
       case "^":
         result = Math.pow(operand1, inputValue);
         break;
-      case "²":
-        result = Math.pow(operand1, 2);
-        inputValue = "";
-        break;
       default:
         break;
     }
@@ -88,7 +85,7 @@ function calculation() {
 
 // Calculation of square root //
 
-sqrtBtn.addEventListener("click", () => {
+function calculateSquareRoot() {
   const inputValue = parseFloat(resultDisplay.textContent);
 
   if (!isNaN(inputValue) && inputValue >= 0) {
@@ -106,9 +103,34 @@ sqrtBtn.addEventListener("click", () => {
   } else {
     resultDisplay.textContent = "Error";
   }
-});
+}
 
 // Calculation of square root //
+
+// Calculation of square //
+
+function calculateSquare() {
+  const inputValue = parseFloat(resultDisplay.textContent);
+
+  if (!isNaN(inputValue)) {
+    const squareResult = Math.pow(inputValue, 2);
+
+    if (Number.isInteger(squareResult)) {
+      resultDisplay.textContent = squareResult.toFixed(0);
+    } else {
+      resultDisplay.textContent = squareResult.toFixed(3);
+    }
+
+    values.textContent = inputValue + "² = ";
+    operand1 = squareResult;
+    dotPressed = false;
+  } else {
+    resultDisplay.textContent = "Error";
+    values.textContent = "";
+  }
+}
+
+// Calculation of square //
 
 // Clear last integer or operator on display //
 
@@ -184,6 +206,10 @@ equal.addEventListener("click", calculation);
 clearAll.addEventListener("click", clearDisplay);
 
 deleteBtn.addEventListener("click", clearLast);
+
+sqrtBtn.addEventListener("click", calculateSquareRoot);
+
+squareBtn.addEventListener("click", calculateSquare);
 
 decimalBtn.addEventListener("click", () => {
   const inputValue = resultDisplay.textContent;
