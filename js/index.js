@@ -77,7 +77,7 @@ function calculation() {
 
     values.textContent = operand1 + " " + operator + " " + inputValue + " = ";
 
-    operand1 = result;
+    operand1 = null;
     operator = null;
   }
 
