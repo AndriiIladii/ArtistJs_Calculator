@@ -13,6 +13,6 @@ Learning project "Advanced Calculator"
   - &#9989; Square root
 - [ ] Advanced features
   - &#9989; Power ($x^{2}$ and $x^{n}$)
-  - [ ] Trigonometry (sin, cos, tan)
+  - &#9989;Trigonometry (sin, cos, tan)
   - &#9989;Keyboard support
   - [ ] History
