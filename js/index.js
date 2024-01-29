@@ -242,6 +242,9 @@ document.addEventListener("keydown", (e) => {
 operatorBtns.forEach((operatorButton) => {
   operatorButton.addEventListener("click", () => {
     values.style.visibility = "visible";
+    if (operand1 !== null && operator !== null) {
+      calculation();
+    }
     operand1 = Number(resultDisplay.textContent);
     operator = operatorButton.getAttribute("data-value");
     values.textContent = operand1 + " " + operator;
