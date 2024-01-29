@@ -15,6 +15,12 @@ let operand1 = null;
 let operator = null;
 let dotPressed = false;
 
+resultDisplay.addEventListener("input", () => {
+  if (resultDisplay.textContent.toLowerCase().includes("error")) {
+    clearDsplay();
+  }
+});
+
 // Displaying numbers //
 
 function appendNumber(value) {
