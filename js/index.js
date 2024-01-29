@@ -15,25 +15,18 @@ let operand1 = null;
 let operator = null;
 let dotPressed = false;
 
-resultDisplay.addEventListener("input", () => {
-  if (resultDisplay.textContent.toLowerCase().includes("error")) {
-    clearDsplay();
-  }
-});
-
 // Displaying numbers //
 
 function appendNumber(value) {
   const clickedNumber = value.target;
   const inputValue = resultDisplay.textContent;
 
-  if (inputValue === "0") {
+  if (inputValue === "0" || resultDisplay.textContent === "Error") {
     resultDisplay.textContent = clickedNumber.textContent;
   } else {
     resultDisplay.textContent += clickedNumber.textContent;
   }
 }
-
 // Displaying numbers //
 
 // Calculation function //
