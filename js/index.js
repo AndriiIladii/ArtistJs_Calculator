@@ -9,6 +9,7 @@ const decimalBtn = document.querySelector("#dot");
 const sqrtBtn = document.querySelector("#sqrt");
 const squareBtn = document.querySelector("#square");
 const plusMinusBtn = document.querySelector("#plus-minus");
+const trigonometryBtns = document.querySelectorAll(".trigonometry");
 
 let operand1 = null;
 let operator = null;
@@ -82,6 +83,58 @@ function calculation() {
 }
 
 // Calculation function //
+
+// Trigonometry calculation //
+trigonometryBtns.forEach((trigonometryBtn) => {
+  trigonometryBtn.addEventListener("click", () => {
+    const trigFunction = trigonometryBtn.id;
+    calculateTrigonometry(trigFunction);
+  });
+});
+
+function calculateTrigonometry(trigFunction) {
+  const inputValue = parseFloat(resultDisplay.textContent);
+
+  if (!isNaN(inputValue)) {
+    let result;
+
+    switch (trigFunction) {
+      case "sin":
+        result = Math.sin(inputValue);
+        break;
+      case "cos":
+        result = Math.cos(inputValue);
+        break;
+      case "tan":
+        result = Math.tan(inputValue);
+        break;
+      case "acos":
+        result = Math.acos(inputValue);
+        break;
+      case "atan":
+        result = Math.atan(inputValue);
+        break;
+      default:
+        break;
+    }
+
+    if (Number.isInteger(result)) {
+      resultDisplay.textContent = result.toFixed(0);
+    } else {
+      resultDisplay.textContent = result.toFixed(5);
+    }
+
+    operand1 = result;
+    operator = null;
+    dotPressed = false;
+
+    values.textContent = trigFunction + "(" + inputValue + ") = ";
+  } else {
+    resultDisplay.textContent = "Error";
+  }
+}
+
+// Trigonometry calculation //
 
 // Calculation of square root //
 

@@ -10,7 +10,7 @@ body .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 25px auto 0;
   width: 550px;
   padding: 0 15px;
   min-height: 900px;
@@ -23,8 +23,8 @@ body .calc {
   align-items: flex-start;
   position: relative;
   padding: 40px 33px;
-  width: 450px;
-  height: 812px;
+  width: 530px;
+  height: 900px;
   background-color: #17181a;
   border-radius: 39px;
 }
@@ -68,7 +68,7 @@ body .calc .buttons__left {
   flex-wrap: wrap;
   -moz-column-count: 3;
        column-count: 3;
-  gap: 20px;
+  gap: 17px;
   max-width: 226px;
   width: 100%;
 }
@@ -102,7 +102,8 @@ body .calc .operator,
 body .calc .equal,
 body .calc .plus-minus,
 body .calc .sqrt,
-body .calc .square {
+body .calc .square,
+body .calc .trigonometry {
   font-size: 32px;
   font-weight: 500;
   display: flex;
@@ -121,7 +122,8 @@ body .calc .operator:hover,
 body .calc .equal:hover,
 body .calc .plus-minus:hover,
 body .calc .sqrt:hover,
-body .calc .square:hover {
+body .calc .square:hover,
+body .calc .trigonometry:hover {
   color: #303136;
   background-color: #fb5825;
 }
@@ -175,7 +177,7 @@ body .buttons__right {
   font-size: 32px;
   display: flex;
   flex-direction: column;
-  row-gap: 19px;
+  row-gap: 20px;
 }
 body .buttons__right .plus {
   height: 96px;
@@ -184,6 +186,12 @@ body .buttons__right .equal {
   height: 107px;
 }
 body .right__buttons {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+body .trigonometry__buttons {
+  font-size: 32px;
   display: flex;
   flex-direction: column;
   row-gap: 20px;
