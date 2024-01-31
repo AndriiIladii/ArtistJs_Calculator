@@ -39,16 +39,16 @@ function calculation() {
 
     switch (operator) {
       case "+":
-        result = operand1 + inputValue;
+        result = PlusOperation(operand1, inputValue);
         break;
       case "-":
-        result = operand1 - inputValue;
+        result = MinusOperation(operand1, inputValue);
         break;
       case "x":
-        result = operand1 * inputValue;
+        result = MultiplyOperation(operand1, inputValue);
         break;
       case "÷":
-        result = operand1 / inputValue;
+        result = DivisionOperation(operand1, inputValue);
         if (inputValue !== 0) {
           result = operand1 / inputValue;
         } else {
@@ -57,10 +57,10 @@ function calculation() {
         }
         break;
       case "%":
-        result = (operand1 / 100) * inputValue;
+        result = PercentOperation(operand1, inputValue);
         break;
       case "^":
-        result = Math.pow(operand1, inputValue);
+        result = PowerOperation(operand1, inputValue);
         break;
       default:
         break;
@@ -79,6 +79,30 @@ function calculation() {
   }
 
   dotPressed = false;
+}
+
+function PlusOperation(a, b) {
+  return a + b;
+}
+
+function MinusOperation(a, b) {
+  return a - b;
+}
+
+function DivisionOperation(a, b) {
+  return a / b;
+}
+
+function MultiplyOperation(a, b) {
+  return a * b;
+}
+
+function PercentOperation(a, b) {
+  return (a / 100) * b;
+}
+
+function PowerOperation(a, b) {
+  return Math.pow(a, b);
 }
 
 // Calculation function //
