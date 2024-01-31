@@ -262,9 +262,15 @@ clearAll.addEventListener("click", clearDisplay);
 
 deleteBtn.addEventListener("click", clearLast);
 
-sqrtBtn.addEventListener("click", calculateSquareRoot);
+sqrtBtn.addEventListener("click", () => {
+  calculation();
+  calculateSquareRoot();
+});
 
-squareBtn.addEventListener("click", calculateSquare);
+squareBtn.addEventListener("click", () => {
+  calculation();
+  calculateSquare();
+});
 
 decimalBtn.addEventListener("click", () => {
   const inputValue = resultDisplay.textContent;
