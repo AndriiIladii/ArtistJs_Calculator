@@ -154,6 +154,42 @@ body .calc .delete {
 body .calc .delete:hover {
   fill: #303136;
 }
+body .calc .history {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(23, 24, 26, 0.5);
+  width: 100%;
+  height: 100%;
+  border-radius: 39px;
+  padding: 70px 0 0 30px;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+body .calc .history__active {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+body .calc .history-item {
+  color: #ffffff;
+  cursor: pointer;
+}
+body .calc .history__btn {
+  z-index: 99999;
+  cursor: pointer;
+  position: absolute;
+}
 body .calc .advanced {
   font-size: 18px;
   background-color: #ffa98e;
