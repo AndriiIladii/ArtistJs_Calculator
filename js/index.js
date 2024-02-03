@@ -10,7 +10,10 @@ const sqrtBtn = document.querySelector("#sqrt");
 const squareBtn = document.querySelector("#square");
 const plusMinusBtn = document.querySelector("#plus-minus");
 const trigonometryBtns = document.querySelectorAll(".trigonometry");
+const HistoryBtn = document.querySelector(".history__btn");
+const HistoryDisplay = document.querySelector(".history");
 
+const history = [];
 let operand1 = null;
 let operator = null;
 let dotPressed = false;
@@ -28,6 +31,32 @@ function appendNumber(value) {
   }
 }
 // Displaying numbers //
+
+// Clear last integer or operator on display //
+
+function clearLast() {
+  let inputValue = resultDisplay.textContent;
+  if (inputValue.length > 1) {
+    inputValue = inputValue.slice(0, -1);
+    resultDisplay.textContent = inputValue;
+  } else {
+    resultDisplay.textContent = "0";
+  }
+}
+
+// Clear last integer or operator on display //
+
+// Clear all elements on display //
+
+function clearDisplay() {
+  resultDisplay.textContent = "0";
+  operand1 = null;
+  operator = null;
+  dotPressed = false;
+  values.textContent = "0";
+}
+
+// Clear all elements on display //
 
 // Calculation function //
 
@@ -71,8 +100,10 @@ function calculation() {
     } else {
       resultDisplay.textContent = result.toFixed(1);
     }
-
     values.textContent = operand1 + " " + operator + " " + inputValue + " = ";
+    const calculationHistory = `${operand1} ${operator} ${inputValue} = ${result}`;
+    history.push(calculationHistory);
+    renderHistory(history);
 
     operand1 = result;
     operator = null;
@@ -147,6 +178,10 @@ function calculateTrigonometry(trigFunction) {
       resultDisplay.textContent = result.toFixed(5);
     }
 
+    const calculationHistory = `${trigFunction}(${inputValue}) = ${result}`;
+    history.push(calculationHistory);
+    renderHistory(history);
+
     operand1 = result;
     operator = null;
     dotPressed = false;
@@ -174,6 +209,9 @@ function calculateSquareRoot() {
     }
 
     values.textContent = "√" + inputValue + " = ";
+    const calculationHistory = `√${inputValue} = ${sqrtResult}`;
+    history.push(calculationHistory);
+    renderHistory(history);
     operand1 = sqrtResult;
     dotPressed = false;
   } else {
@@ -198,6 +236,9 @@ function calculateSquare() {
     }
 
     values.textContent = inputValue + "² = ";
+    const calculationHistory = `${inputValue}² = ${squareResult}`;
+    history.push(calculationHistory);
+    renderHistory(history);
     operand1 = squareResult;
     dotPressed = false;
   } else {
@@ -207,32 +248,6 @@ function calculateSquare() {
 }
 
 // Calculation of square //
-
-// Clear last integer or operator on display //
-
-function clearLast() {
-  let inputValue = resultDisplay.textContent;
-  if (inputValue.length > 1) {
-    inputValue = inputValue.slice(0, -1);
-    resultDisplay.textContent = inputValue;
-  } else {
-    resultDisplay.textContent = "0";
-  }
-}
-
-// Clear last integer or operator on display //
-
-// Clear all elements on display //
-
-function clearDisplay() {
-  resultDisplay.textContent = "0";
-  operand1 = null;
-  operator = null;
-  dotPressed = false;
-  values.textContent = "0";
-}
-
-// Clear all elements on display //
 
 // Keyboard support //
 
@@ -260,8 +275,48 @@ document.addEventListener("keydown", (e) => {
       operatorButton.click();
     }
   }
+
+  if (key === "Escape") {
+    const history = document.querySelector(".history__active");
+    if (history) {
+      history.classList.remove("history__active");
+    }
+  }
 });
 // Keyboard support //
+
+// History displaying and clicking functions //
+
+function renderHistory(historyArr) {
+  const historyBlock = document.querySelector(".history");
+  historyBlock.innerHTML = "";
+
+  historyArr.forEach((calculation) => {
+    const historyItem = document.createElement("p");
+    historyItem.textContent = calculation;
+    historyItem.classList.add("history-item");
+    historyBlock.appendChild(historyItem);
+  });
+
+  const historyItems = document.querySelectorAll(".history-item");
+
+  historyItems.forEach((historyItem) => {
+    historyItem.addEventListener("click", () => {
+      const historyText = historyItem.textContent;
+      const [expression, result] = historyText
+        .split("=")
+        .map((item) => item.trim());
+
+      if (expression && result) {
+        values.textContent = expression;
+        resultDisplay.textContent = result;
+        HistoryDisplay.classList.remove("history__active");
+      }
+    });
+  });
+}
+
+// History displaying and clicking functions //
 
 operatorBtns.forEach((operatorButton) => {
   operatorButton.addEventListener("click", () => {
@@ -311,4 +366,8 @@ plusMinusBtn.addEventListener("click", () => {
     const newValue = -currentValue;
     resultDisplay.textContent = newValue;
   }
+});
+
+HistoryBtn.addEventListener("click", () => {
+  HistoryDisplay.classList.toggle("history__active");
 });

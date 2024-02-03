@@ -159,6 +159,47 @@ body {
       }
     }
 
+    .history {
+      display: none;
+      position: absolute;
+      z-index: 1;
+      background-color: rgba($bg-calc, 0.5);
+      width: 100%;
+      height: 100%;
+      border-radius: 39px;
+      padding: 70px 0 0 30px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .history__active {
+      position: absolute;
+      top: 0px;
+      left: 0;
+      display: block;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .history-item {
+      color: $color-white;
+      cursor: pointer;
+    }
+
+    .history__btn {
+      z-index: 99999;
+      cursor: pointer;
+      position: absolute;
+    }
+
     .advanced {
       font-size: 18px;
       background-color: $operator-color;
